@@ -20,3 +20,8 @@ def validate_name(self, key, name):
         raise TypeError("Name can't be numbers")
     if not len(name) > 100:
         raise ValueError("Name can't be more than 100 characters")
+
+@validates('description')
+def validate_description(self, key, description):
+    if not len(description) > 255:
+        raise ValueError("Description can't be more than 255 characters")
