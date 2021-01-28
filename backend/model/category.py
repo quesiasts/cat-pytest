@@ -20,5 +20,3 @@ def validate_name(self, key, name):
         raise TypeError("Name can't be numbers")
     if not len(name) > 100:
         raise ValueError("Name can't be more than 100 characters")
-
-category = Category('name', 'category description')
