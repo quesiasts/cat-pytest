@@ -1,8 +1,8 @@
 from category import Category
 
-class TestCategory(Category):
-    name = 1
-    description = "melhores coisas de veículos para você jdfklfjlsflsfs"
+class TestCategory():
+    name = 'automotivo'
+    description = "melhores coisas de veículos para você"
 
 def test_blank_name(self, name):
     if Category.name == int:
@@ -11,9 +11,9 @@ def test_blank_name(self, name):
         except Exception as error:
             assert isinstance(ValueError)
 
-def test_description_bigger_100(self, description):
-    if Category.description > len(100):
+def test_description_bigger(self, description):
+    if Category.description > len(255):
         try:
-            print('Please, descriptions only 100 characters')
+            print('Please, descriptions only 255 characters')
         except Exception as error:
             assert isinstance(error, ValueError)
