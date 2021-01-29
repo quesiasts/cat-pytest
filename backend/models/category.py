@@ -1,6 +1,9 @@
+import sys
+sys.path.append('.')
+
 from sqlalchemy import Column, String
 from sqlalchemy.orm import validates
-from base_model import BaseModel
+from backend.models.base_model import BaseModel
 
 
 class Category(BaseModel):
@@ -14,6 +17,8 @@ class Category(BaseModel):
 
     @validates('name')
     def validate_name(self, key, name):
+        if not name:
+            raise ValueError("Name can't be empty")
         if not isinstance(name, str):
             raise TypeError("Name must be strings")
         if not name.strip():
