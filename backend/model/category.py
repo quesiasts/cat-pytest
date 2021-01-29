@@ -5,8 +5,8 @@ from base_model import BaseModel
 
 class Category(BaseModel):
     __tablename__ = 'category'
-    name = Column('name', String(length=100), nullable = False)
-    description = Column('description', String(length=255), nullable = True)
+    name = Column('name', String(length=100), nullable=False)
+    description = Column('description', String(length=255), nullable=True)
 
     def __init__(self, name: str, description: str) -> None:
         self.name = name
@@ -24,5 +24,8 @@ class Category(BaseModel):
 
     @validates('description')
     def validate_description(self, key, description):
+        if not isinstance(description, str):
+            raise TypeError("Description must be a string")
         if not len(description) > 255:
             raise ValueError("Description can't be more than 255 characters")
+        return description
