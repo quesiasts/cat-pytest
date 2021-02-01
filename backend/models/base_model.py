@@ -4,6 +4,6 @@ from sqlalchemy import Column, Integer
 Base = declarative_base()
 
 
-class BaseModel:
+class BaseModel(Base):
     __abstract__ = True
     id = Column(Integer, primary_key=True)
