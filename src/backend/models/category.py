@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from sqlalchemy import Column, String
 from sqlalchemy.orm import validates
-from backend.models.base_model import BaseModel
+from src.backend.models.base_model import BaseModel
 
 
 class Category(BaseModel):

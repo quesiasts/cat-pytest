@@ -1,5 +1,5 @@
-from backend.dao.base_dao import BaseDao
-from backend.models.category import Category
+from src.backend.dao.base_dao import BaseDao
+from src.backend.models.category import Category
 
 
 class CategoryDao(BaseDao):

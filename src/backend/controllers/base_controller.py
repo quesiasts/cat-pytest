@@ -1,6 +1,6 @@
-from backend.dao.base_dao import BaseDao
-from backend.models.base_model import BaseModel
-from backend.models.category import Category
+from src.backend.dao.base_dao import BaseDao
+from src.backend.models.base_model import BaseModel
+from src.backend.models.category import Category
 
 
 class BaseController():
