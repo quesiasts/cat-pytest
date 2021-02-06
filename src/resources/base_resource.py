@@ -17,7 +17,7 @@ class BaseResource(Resource):
         data = request.json
         item = self.__model_type(data)
         self.__dao.save(item)
-        return item, 201
+        return item
 
     def put(self, id):
         data = request.json
@@ -26,9 +26,9 @@ class BaseResource(Resource):
             for key, value in data.itens():
                 setattr(item, key, value)
             return self.__dao.save(item)
-        return None, 404
+        return None
 
     def delete(self, id):
         item = self.__dao.read_by_id(id)
         self.__dao.delete(item)
-        return None, 204
+        return None
