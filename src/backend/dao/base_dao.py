@@ -1,5 +1,5 @@
-from backend.dao.session import Session
-from backend.models.base_model import BaseModel
+from src.backend.dao.session import Session
+from src.backend.models.base_model import BaseModel
 
 
 class BaseDao():

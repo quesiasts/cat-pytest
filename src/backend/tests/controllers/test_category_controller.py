@@ -3,8 +3,8 @@ sys.path.append('.')
 
 import pytest
 from sqlalchemy.orm.exc import UnmappedInstanceError
-from backend.models.category import Category
-from backend.controllers.category_controller import CategoryController
+from src.backend.models.category import Category
+from src.backend.controllers.category_controller import CategoryController
 
 
 class TestCategoryController:

@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block body %}
+<br/>
+<form action="/category/{{ category.id }}" method="POST">
+    <div class="container d-grid gap-3">
+        <div class="col-auto">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" value="{{ category.name }}" name="name" required>
+        </div>
+        <div class="col-auto">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" value="{{ category.description }}" name="description" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+{% endblock %}

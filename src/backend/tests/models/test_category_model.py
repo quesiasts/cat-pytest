@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import pytest
-from backend.models.category import Category
+from src.backend.models.category import Category
 
 
 class TestCategory():

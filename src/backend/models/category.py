@@ -1,10 +1,8 @@
 import sys
 sys.path.append('.')
-
 from sqlalchemy import Column, String
 from sqlalchemy.orm import validates
-from backend.models.base_model import BaseModel
-
+from src.backend.models.base_model import BaseModel
 
 class Category(BaseModel):
     __tablename__ = 'category'
@@ -16,7 +14,7 @@ class Category(BaseModel):
         self.description = description
 
     @validates('name')
-    def validate_name(self, key, name):
+    def validate_name(self, key, name):        
         if not name:
             raise ValueError("Name can't be empty")
         if not isinstance(name, str):
@@ -34,3 +32,6 @@ class Category(BaseModel):
         if len(description) > 255:
             raise ValueError("Description can't be more than 255 characters")
         return description
+
+    def __str__(self):
+        return f"""Name: {self.name}, Description: {self.description}"""
